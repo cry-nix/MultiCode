@@ -26,13 +26,4 @@ It keeps working step by step until the job is done – just like a real develop
 ## Installation
 
 ```bash
-# Clone the repo
-git clone https://github.com/yourusername/multicode.git
-cd multicode
-
-# Create a virtual environment (recommended)
-python -m venv venv
-source venv/bin/activate  # or `venv\Scripts\activate` on Windows
-
-# Install dependencies
-pip install -r requirements.txt
+curl -sSL https://raw.githubusercontent.com/yourusername/multicode/main/install.sh | bash
