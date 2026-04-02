@@ -3,7 +3,7 @@ import json
 from rich.console import Console
 from rich.panel import Panel
 from rich.markdown import Markdown
-import . as api
+from . import api
 from .input import createInput
 import signal
 from .tools import read_file, edit_file, run_command
