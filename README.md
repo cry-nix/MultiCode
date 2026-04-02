@@ -26,4 +26,4 @@ It keeps working step by step until the job is done – just like a real develop
 ## Installation
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/yourusername/multicode/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/cry-nix/MultiCode/main/install.sh | bash
