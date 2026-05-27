@@ -8,13 +8,21 @@ BIN_DIR="$HOME/.local/bin"
 WRAPPER="$BIN_DIR/multicode"
 
 if [ -d "$INSTALL_DIR" ]; then
-    echo "Updating existing installation..."
-    cd "$INSTALL_DIR"
-    git pull
-else
-    echo "Cloning repository..."
-    git clone https://github.com/cry-nix/MultiCode.git "$INSTALL_DIR"
+    echo "Backing up statuses.txt..."
+    mkdir -p "$HOME/multicode"
+    if [ -f "$INSTALL_DIR/statuses.txt" ]; then
+        cp "$INSTALL_DIR/statuses.txt" "$HOME/multicode/statuses.txt"
+        echo "Copied statuses.txt to ~/multicode"
+    else
+        echo "Warning: statuses.txt not found in install dir, skipping backup."
+    fi
+
+    echo "Removing existing installation..."
+    rm -rf "$INSTALL_DIR"
 fi
+
+echo "Cloning repository..."
+git clone https://github.com/cry-nix/MultiCode.git "$INSTALL_DIR"
 
 cd "$INSTALL_DIR"
 python3 -m venv venv
